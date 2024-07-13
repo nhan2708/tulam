@@ -2249,10 +2249,6 @@ spawn(function()
     end
 end)
 
-local Section = M:AddSection({
-    Name = "Distance Mobs"
-})
-
 PosY = 30
 
 
