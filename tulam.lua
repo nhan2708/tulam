@@ -2007,6 +2007,11 @@ local ST = Window:MakeTab({
     PremiumOnly = false
 })
 
+local S = Window:MakeTab({
+    Name = "📈 CHỈ SỐ",
+    Icon = "rbxassetid://8192162908",
+    PremiumOnly = false
+})
 
 -----Label--------------------
 
@@ -2355,6 +2360,138 @@ elseif _G.WhiteScreen == false then
             CheckAntiCheatBypass()
         end    
     })
+
+    local Pointstat = S:AddLabel("Stat Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Pointstat:Set("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
+            end)
+        end
+    end)
+    
+local Melee = S:AddLabel("Melee : ")
+local Defense = S:AddLabel("Defense : ")
+local Sword = S:AddLabel("Sword : ")
+local Gun = S:AddLabel("Gun : ")
+local Fruit = S:AddLabel("Fruit : ")
+
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Melee:Set("Melee : "..game.Players.localPlayer.Data.Stats.Melee.Level.Value)
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Defense:Set("Defense : "..game.Players.localPlayer.Data.Stats.Defense.Level.Value)
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Sword:Set("Sword : "..game.Players.localPlayer.Data.Stats.Sword.Level.Value)
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Gun:Set("Gun : "..game.Players.localPlayer.Data.Stats.Gun.Level.Value)
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Fruit:Set("Fruit : "..game.Players.localPlayer.Data.Stats["Demon Fruit"].Level.Value)
+            end)
+        end
+    end)
+
+S:AddToggle({
+    Name = "Auto Stats Kaitun",
+    Default = false,
+    Flag = "Auto Kaitun",
+    Save = true,
+    Callback = function(Value)
+        _G.Auto_Stats_Kaitun = Value
+    end    
+})
+
+S:AddToggle({
+    Name = "Melee",
+    Default = false,
+    Flag = "Auto Melee",
+    Save = true,
+    Callback = function(Value)
+        melee = Value
+    end    
+})
+
+S:AddToggle({
+    Name = "Defense",
+    Default = false,
+    Flag = "Auto Defense",
+    Save = true,
+    Callback = function(Value)
+        defense = Value
+    end    
+})
+
+S:AddToggle({
+    Name = "Sword",
+    Default = false,
+    Flag = "Auto Sword",
+    Save = true,
+    Callback = function(Value)
+        sword = Value
+    end    
+})
+
+S:AddToggle({
+    Name = "Gun",
+    Default = false,
+    Flag = "Auto Gun",
+    Save = true,
+    Callback = function(Value)
+        gun = Value
+    end    
+})
+
+S:AddToggle({
+    Name = "Devil Fruit",
+    Default = false,
+    Flag = "Auto Fruit",
+    Save = true,
+    Callback = function(Value)
+        demonfruit = Value
+    end    
+})
+
+PointStats = 1
+S:AddSlider({
+    Name = "Point",
+    Min = 1,
+    Max = 2450,
+    Default = 1,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "Point",
+    Flag = "Auto Point",
+    Save = true,
+    Callback = function(Value)
+        PointStats = Value
+    end    
+})
 
 function isnil(thing)
     return (thing == nil)
