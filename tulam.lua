@@ -2656,7 +2656,7 @@ ToggleFarm = M:AddToggle({
     end    
 })
 
-_G.BringMonster = 350
+_G.BringMonster = true
 _G.BringMode = 350
 _G.FastAttack = 0.175
 
