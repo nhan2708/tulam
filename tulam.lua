@@ -1608,8 +1608,8 @@ elseif _G.WhiteScreen == false then
         end
     end
     })
-
-    function CheckAntiCheatBypass()
+    
+    function AntiBan()
         for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
             if v:IsA("LocalScript") then
                 if v.Name == "General" or v.Name == "Shiftlock"  or v.Name == "FallDamage" or v.Name == "4444" or v.Name == "CamBob" or v.Name == "JumpCD" or v.Name == "Looking" or v.Name == "Run" then
@@ -1625,18 +1625,7 @@ elseif _G.WhiteScreen == false then
             end
          end
         end
-    
-    CheckAntiCheatBypass()
-    
-    ST:AddToggle({
-        Name = "Antiban",
-        Default = true,
-        Callback = function(Value)
-            _G.AntiCheat = Value
-            CheckAntiCheatBypass()
-        end    
-    })
-
+        AntiBan()
     local Pointstat = S:AddLabel("Stat Points")
     
     spawn(function()
