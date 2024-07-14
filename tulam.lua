@@ -1491,61 +1491,10 @@ ToggleFarm = M:AddToggle({
     end    
 })
 
-    local Section = M:AddSection({
-        Name = "Bring Mob"
-    })
+_G.BringMonster = true
+_G.BringMode = 350
+_G.FastAttack = true
 
-M:AddToggle({
-    Name = "Bring Mobs",
-    Default = true,
-    Flag = "Bring Mobs",
-    Save = false,
-    Callback = function(Value)
-        _G.BringMonster = Value
-    end    
-})
-local Bring = {"Low", "Normal", "Super Bring"}
-_G.BringMode = "Normal"
-M:AddDropdown({
-    Name = "Bring Mode",
-    Default = "Normal",
-    Options = Bring,
-    Default = false,
-    Flag = "Bring Mode",
-    Save = true,
-    Callback = function(Value)
-        _G.BringMode = Value
-    end    
-})
-spawn(function()
-    while wait(.1) do
-        if _G.BringMode then
-            pcall(function()
-                if _G.BringMode == "Low" then
-                    _G.BringMode = 300
-                elseif _G.BringMode == "Normal" then
-                    _G.BringMode = 350
-                elseif _G.BringMode == "Super Bring" then
-                    _G.BringMode = 400
-                end
-            end)
-        end
-    end
-end)
-
-local Section = M:AddSection({
-    Name = "FastAttack :"
-})
-
-M:AddToggle({
-    Name = "FastAttack",
-    Default = true,
-    Flag = "FastAttack",
-    Save = false,
-    Callback = function(Value)
-        _G.FastAttack = Value
-    end    
-})
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 y = debug.getupvalues(CombatFrameworkR)[2]
@@ -1579,32 +1528,7 @@ spawn(function()
     end)
 end)
 
-local AttackList = {"0.15", "0.175", "0.2"}
-M:AddDropdown({
-	Name = "FastAttack Delay",
-	Default = "0.175",
-	Options = AttackList,
-    Flag = "FastAttack Delay",
-    Save = true,
-	Callback = function(Value)
-		_G.FastAttackDelay = Value
-	end    
-})
-spawn(function()
-    while wait(.1) do
-        if _G.FastAttackDelay then
-            pcall(function()
-                if _G.FastAttackDelay == "0.15" then
-                    _G.FastAttackDelay = 0.15
-                elseif _G.FastAttackDelay == "0.175" then
-                    _G.FastAttackDelay = 0.175
-                elseif _G.FastAttackDelay == "0.2" then
-                    _G.FastAttackDelay = 0.2
-                end
-            end)
-        end
-    end
-end)
+_G.FastAttackDelay = 0.2
 
 PosY = 30
 
