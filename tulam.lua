@@ -1674,7 +1674,7 @@ end)
 
 _G.FastAttackDelay = 0.2
 
-PosY = 30
+PosY = 28
 
 
 spawn(function()
