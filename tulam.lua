@@ -4878,21 +4878,7 @@ ToggleRemoveNotify:OnChanged(function(Value)
         end
     end)
 
-    local ToggleAutoV3 = Tabs.Setting:AddToggle("ToggleAutoV3", {Title = " Auto turn on V3",Description = "", Default = false })
-    ToggleAutoV3:OnChanged(function(Value)
-        _G.V3 = Value
-        end)
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if _G.V3 then
-                    game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
-                    wait(0.1)
-                    game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
-                end
-            end)
-        end
-    end)
+
 
     local ToggleAutoV4 = Tabs.Setting:AddToggle("ToggleAutoV4", {Title = " Auto turn on V4",Description = "", Default = false })
     ToggleAutoV4:OnChanged(function(Value)
