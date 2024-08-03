@@ -3562,16 +3562,15 @@ end)
 end
 
 
+Tabs.Sea:AddButton({
+        Title = "Random Azure",
+        Description = "",
+        Callback = function()            
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
+ end
+    })
+
 if Third_Sea then
-
-    Tabs.Sea:AddButton({
-            Title = "Random Azure",
-            Description = "",
-            Callback = function()            
-    game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
-    end
-        })
-
     local RoughSea = Tabs.Sea:AddSection("Rough Sea")
 
 Tabs.Sea:AddButton({
@@ -4879,24 +4878,23 @@ ToggleRemoveNotify:OnChanged(function(Value)
         end
     end)
 
-    local ToggleAutoV3 = Tabs.Setting:AddToggle("ToggleAutoV3", {Title = " Auto Turn On V3",Description = "", Default = false })
-    ToggleAutoV3:OnChanged(function(Value)
+    local ToggleAutoV3 = Tabs.Setting:AddToggle("ToggleAutoV3", {Title = " Auto turn on V3",Description = "", Default = false })
+    ToggleAutoV4:OnChanged(function(Value)
         _G.V3 = Value
         end)
-        spawn(function()
-            while wait() do
-                pcall(function()
-                    if _G.V3 then
-                        game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
-                        wait(0.1)
-                        game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
-                    end
-                end)
-            end
-        end)
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.V3 then
+                    game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
+                    wait(0.1)
+                    game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
+                end
+            end)
+        end
+    end)
 
-
-    local ToggleAutoV4 = Tabs.Setting:AddToggle("ToggleAutoV4", {Title = " Auto Turn On V4",Description = "", Default = false })
+    local ToggleAutoV4 = Tabs.Setting:AddToggle("ToggleAutoV4", {Title = " Auto turn on V4",Description = "", Default = false })
     ToggleAutoV4:OnChanged(function(Value)
         _G.V4 = Value
         end)
@@ -6863,6 +6861,7 @@ spawn(function()
     end
 end)
     
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
