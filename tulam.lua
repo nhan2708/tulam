@@ -1,4 +1,4 @@
---VTN v13
+--VTN v14
 
 local player = game.Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui") -- Get the player's PlayerGui
@@ -5361,13 +5361,16 @@ local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
 })
 
 
-Tabs.Player:AddButton("Refresh Player",function()
-        Playerslist = {}
-        SelectedPly:Clear()
-        for i,v in pairs(game:GetService("Players"):GetChildren()) do  
-            SelectedPly:Add(v.Name)
-        end
-    end)
+Tabs.Player:AddButton({
+    Name = "Refresh Players",
+    Callback = function()
+        NewPlayerList = {}
+    for i,v in pairs(game.Players:GetChildren()) do  
+        table.insert(Playerslist ,v.Name)
+    end
+    SelectedPly:Refresh(NewPlayerList)
+      end
+})
 
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Description = "",Default = false })
 ToggleTeleport:OnChanged(function(Value)
