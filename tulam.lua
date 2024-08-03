@@ -4879,7 +4879,7 @@ ToggleRemoveNotify:OnChanged(function(Value)
     end)
 
     local ToggleAutoV3 = Tabs.Setting:AddToggle("ToggleAutoV3", {Title = " Auto turn on V3",Description = "", Default = false })
-    ToggleAutoV4:OnChanged(function(Value)
+    ToggleAutoV3:OnChanged(function(Value)
         _G.V3 = Value
         end)
     spawn(function()
