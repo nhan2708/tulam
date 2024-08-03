@@ -4710,9 +4710,10 @@ if Second_Sea then
         end)
     end
 
-local Items = Tabs.Main:AddSection("Auto item nv & Race v2")
+
 
 if Second_Sea then
+    local Items = Tabs.Main:AddSection("Auto item nv & Race v2")
     local ToggleEvoRace = Tabs.Main:AddToggle("ToggleEvoRace", {Title = "Auto Quest Flower",Description = "",Default = false })
     ToggleEvoRace:OnChanged(function(Value)
         _G.AutoEvoRace = Value
@@ -5357,8 +5358,8 @@ Tabs.Player:AddButton({
     Description = "",
     Callback = function()
         NewPlayerList = {}
-    for i,v in pairs(game.Players:GetChildren()) do  
-        table.insert(Playerslist ,v.Name)
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+        table.insert(Playerslist,v.Name)
     end
     SelectedPly:Refresh(NewPlayerList)
       end
