@@ -1,4 +1,4 @@
---VTN v14
+--VTN v12
 
 local player = game.Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui") -- Get the player's PlayerGui
@@ -3562,15 +3562,16 @@ end)
 end
 
 
-Tabs.Sea:AddButton({
-        Title = "Random Azure",
-        Description = "",
-        Callback = function()            
-game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
- end
-    })
-
 if Third_Sea then
+
+    Tabs.Sea:AddButton({
+            Title = "Random Azure",
+            Description = "",
+            Callback = function()            
+    game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
+    end
+        })
+
     local RoughSea = Tabs.Sea:AddSection("Rough Sea")
 
 Tabs.Sea:AddButton({
@@ -4894,6 +4895,7 @@ ToggleRemoveNotify:OnChanged(function(Value)
             end
         end)
 
+
     local ToggleAutoV4 = Tabs.Setting:AddToggle("ToggleAutoV4", {Title = " Auto Turn On V4",Description = "", Default = false })
     ToggleAutoV4:OnChanged(function(Value)
         _G.V4 = Value
@@ -5360,9 +5362,15 @@ local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
     Default = 1,
 })
 
+SelectedPly:SetValue("nil")
+SelectedPly:OnChanged(function(Value)
+    _G.SelectPly = Value
+end)
+
 
 Tabs.Player:AddButton({
-    Name = "Refresh Players",
+    Title = "Refresh Player",
+    Description = "",
     Callback = function()
         NewPlayerList = {}
     for i,v in pairs(game.Players:GetChildren()) do  
@@ -5485,7 +5493,6 @@ function getAllBladeHits(Sizes)
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------
---Mics
 local Mastery = Tabs.Player:AddSection("Misc")
 
 
@@ -6829,8 +6836,8 @@ end)
 local ToggleAutokilltrial = Tabs.Race:AddToggle("ToggleAutokilltrial", {Title = "Auto kill after trial",Description = "", Default = false })
 ToggleAutokilltrial:OnChanged(function(Value)
     _G.KillAfterTrials = value
-    StopTween(_G.KillAfterTrials)
 end)
+Options.ToggleAutokilltrial:SetValue(false)
 spawn(function()
     while wait() do 
         pcall(function()
@@ -6856,7 +6863,6 @@ spawn(function()
     end
 end)
     
-
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
