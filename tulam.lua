@@ -5342,24 +5342,26 @@ end
 local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
     Title = "Select Player",
     Description = "",
-    Values = Playerslist,
-    Multi = false,
-    Default = 1,
+    Options = Playerslist,
+    Callback = function(Value)
+        _G.SelectPly = Value
+    end  
 })
-
+--[[
 SelectedPly:SetValue("nil")
 SelectedPly:OnChanged(function(Value)
     _G.SelectPly = Value
 end)
+]]
 
 
 Tabs.Player:AddButton({
-    Title = "Refresh Player",
+    Title = "Refresh Players",
     Description = "",
     Callback = function()
         NewPlayerList = {}
-    for i,v in pairs(game:GetService("Players"):GetChildren()) do
-        table.insert(Playerslist,v.Name)
+    for i,v in pairs(game.Players:GetChildren()) do  
+        table.insert(Playerslist ,v.Name)
     end
     SelectedPly:Refresh(NewPlayerList)
       end
