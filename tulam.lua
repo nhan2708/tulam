@@ -2787,51 +2787,36 @@ local listfastattack = {'Slow','Normal','Super'}
 --// auto farm chest
 --------------------------
 
-local Code = {
-    "EXP_5B",
-    "CONTROL",
-    "UPDATE11",
-    "XMASEXP",
-    "1BILLION",
-    "ShutDownFix2",
-    "UPD14",
-    "STRAWHATMAINE",
-    "TantaiGaming",
-    "Colosseum",
-    "Axiore",
-    "Sub2Daigrock",
-    "Sky Island 3",
-    "Sub2OfficialNoobie",
-    "SUB2NOOBMASTER123",
-    "THEGREATACE",
-    "Fountain City",
-    "BIGNEWS",
+local X2Code = {
+    "KITTGAMING",
+    "ENYU_IS_PRO",
     "FUDD10",
+    "BIGNEWS",
+    "THEGREATACE",
     "SUB2GAMERROBOT_EXP1",
-    "UPD15",
-    "2BILLION",
-    "UPD16",
-    "3BVISITS",
-    "fudd10_v2",
-    "Starcodeheo",
-    "Magicbus",
+    "STRAWHATMAIME",
+    "SUB2OFFICIALNOOBIE",
+    "SUB2NOOBMASTER123",
+    "SUB2DAIGROCK",
+    "AXIORE",
+    "TANTAIGAMIMG",
+    "STRAWHATMAINE",
     "JCWK",
-    "Bluxxy",
-    "Sub2Fer999",
-    "Enyu_is_Pro"
-   }
+    "FUDD10_V2",
+    "SUB2FER999",
+    "MAGICBIS",
+    "TY_FOR_WATCHING",
+    "STARCODEHEO"
+}
 
-      Tabs.Main:AddButton({
-        Title = "Auto Redeem All Code",
-        Description = "",
-        Callback = function()
-            RedeemCode()
+      Tabs.Main:AddButton("Redeem All Codes",function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
         end
-    })
-
-    function RedeemCode(Code)
-		game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Code)
-	end
+        for i,v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+    end)
 
     Tabs.Main:AddButton({
         Title = "Fps Booster",
