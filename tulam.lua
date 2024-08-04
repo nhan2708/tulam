@@ -3220,7 +3220,7 @@ end)
 
 print("Load Script")
 
-local Library = Update:Window("           Domadic","12523036534",Enum.KeyCode.RightControl);
+local Library = Update:Window("VTN HUB","12523036534",Enum.KeyCode.RightControl);
 
 local H = Library:AddTab("Home","6026568198")
 local Main = Library:AddTab("Level Farm","13075651575")
