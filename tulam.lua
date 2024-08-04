@@ -158,7 +158,7 @@ function Update:Window(text,logo,keybind)
     Name.Text = text
     Name.TextColor3 = Color3.fromRGB(225, 225, 225)
     Name.TextSize = 20.000
-
+--[[
     local Hub = Instance.new("TextLabel")
     Hub.Name = "Hub"
     Hub.Parent = Top
@@ -184,7 +184,7 @@ function Update:Window(text,logo,keybind)
     MapName.TextColor3 = Color3.fromRGB(225, 225, 225)   
     MapName.TextSize = 20.000
     MapName.TextXAlignment = Enum.TextXAlignment.Left
-
+]]
     local Hubb = Instance.new("TextLabel")
     Hubb.Name = "Hubb"
     Hubb.Parent = Top
