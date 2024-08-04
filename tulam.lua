@@ -1,19 +1,4 @@
---[[
- /$$$$$$$                      /$$                 /$$$$$$$$                               
-| $$__  $$                    |__/                |__  $$__/                               
-| $$  \ $$  /$$$$$$   /$$$$$$$ /$$  /$$$$$$          | $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$ 
-| $$$$$$$/ /$$__  $$ /$$_____/| $$ /$$__  $$         | $$ /$$__  $$ |____  $$| $$_  $$_  $$
-| $$__  $$| $$  \ $$|  $$$$$$ | $$| $$$$$$$$         | $$| $$$$$$$$  /$$$$$$$| $$ \ $$ \ $$
-| $$  \ $$| $$  | $$ \____  $$| $$| $$_____/         | $$| $$_____/ /$$__  $$| $$ | $$ | $$
-| $$  | $$|  $$$$$$/ /$$$$$$$/| $$|  $$$$$$$         | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
-|__/  |__/ \______/ |_______/ |__/ \_______/         |__/ \_______/ \_______/|__/ |__/ |__/     
 
-[+] Rosie Team Cảm Ơn Bạn Đã Tin Tưởng Và Sử Dụng Dịch Vụ Của Chúng Tôi, Nếu Thấy Hữu Ít Hãy Chia Sẻ Cho Bạn Bè Của Bạn !!
-[+] Không Được Share Hay Crack Mã Nguồn Này Cho Ai! Nếu Không Bạn Sẽ Bị Ban IP Khỏi Website Vĩnh Viễn!
-[+] Chúng Tôi Không Nhận Hỗ Trợ Những Mã Nguồn Miễn Phí, Xin Đừng Bảo Vì Sao. Tạo Ticket Hỗ Trợ Của Website Tại: https://rosieteam.net/dash/ticket
-[+] Nếu Bạn Edit Source Và Up Web Share Nhớ Obfuscate Script. Nếu Bạn Có Tiền Thì Sử Dụng: Lura.Ph, Luarmor.Net | Nếu Bạn Không Có Tiền Thì Dùng: luaobfuscate.com, MoonSec, 77Fuscate,... Nhé!
-]]
-  
 local ScreenGui1 = Instance.new("ScreenGui")
 local ImageButton1 = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -35,21 +20,21 @@ ImageButton1.MouseButton1Down:connect(function()
 end)
 UICorner.Parent = ImageButton1
 
-do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
+do local GUI = game.CoreGui:FindFirstChild("VTNHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
     _G.Color = Color3.fromRGB(0, 247, 255)
    end 
 end
 
 do
-    local NamfonHub = workspace:FindFirstChild("DeeKub")
-    if NamfonHub then
-        NamfonHub:Destroy()
+    local VTNHUB = workspace:FindFirstChild("VTNHUB")
+    if VTNHUB then
+        VTNHUB:Destroy()
     end
 end
 
 local Namfon = Instance.new("Part",workspace)
 Namfon.Size = Vector3.new(30,5,30)
-Namfon.Name = "DeeKub"
+Namfon.Name = "VTNHUB"
 Namfon.Transparency = 1
 Namfon.CanCollide = true
 Namfon.Anchored = true
@@ -118,14 +103,14 @@ function Update:Window(text,logo,keybind)
     local keybind = keybind or Enum.KeyCode.RightControl
     local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
     
-    local SOMEXHUB = Instance.new("ScreenGui")
-    SOMEXHUB.Name = "SOMEXHUB"
-    SOMEXHUB.Parent = game.CoreGui
-    SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    local VTNHUB = Instance.new("ScreenGui")
+    VTNHUB.Name = "VTNHUB"
+    VTNHUB.Parent = game.CoreGui
+    VTNHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     local Main = Instance.new("Frame")
     Main.Name = "Main"
-    Main.Parent = SOMEXHUB
+    Main.Parent = VTNHUB
     Main.ClipsDescendants = true
     Main.AnchorPoint = Vector2.new(0.5,0.5)
     Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
@@ -158,45 +143,6 @@ function Update:Window(text,logo,keybind)
     Name.Text = text
     Name.TextColor3 = Color3.fromRGB(225, 225, 225)
     Name.TextSize = 20.000
---[[
-    local Hub = Instance.new("TextLabel")
-    Hub.Name = "Hub"
-    Hub.Parent = Top
-    Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Hub.BackgroundTransparency = 1.000
-    Hub.Position = UDim2.new(0, 85, 0, 0)
-    Hub.Size = UDim2.new(0, 81, 0, 27)
-    Hub.Font = Enum.Font.GothamSemibold
-    Hub.Text = "        HUB"
-    Hub.TextColor3 = Color3.fromRGB(0, 247, 255)   
-    Hub.TextSize = 20.000
-    Hub.TextXAlignment = Enum.TextXAlignment.Left
-
-    local MapName = Instance.new("TextLabel")
-    MapName.Name = "MapName"
-    MapName.Parent = Top
-    MapName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    MapName.BackgroundTransparency = 1.000
-    MapName.Position = UDim2.new(0, 85, 0, 0)
-    MapName.Size = UDim2.new(0, 81, 0, 27)
-    MapName.Font = Enum.Font.GothamSemibold
-    MapName.Text = "                | BLOX FRUIT"
-    MapName.TextColor3 = Color3.fromRGB(225, 225, 225)   
-    MapName.TextSize = 20.000
-    MapName.TextXAlignment = Enum.TextXAlignment.Left
-]]
-    local Hubb = Instance.new("TextLabel")
-    Hubb.Name = "Hubb"
-    Hubb.Parent = Top
-    Hubb.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Hubb.BackgroundTransparency = 1.000
-    Hubb.Position = UDim2.new(0, 480, 0, 0)
-    Hubb.Size = UDim2.new(0, 81, 0, 27)
-    Hubb.Font = Enum.Font.GothamSemibold
-    Hubb.Text = ""
-    Hubb.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Hubb.TextSize = 17.000
-    Hubb.TextXAlignment = Enum.TextXAlignment.Left
 
     local Tab = Instance.new("Frame")
     Tab.Name = "Tab"
