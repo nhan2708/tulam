@@ -2822,7 +2822,7 @@ local x2Code = {
    }
 
       Tabs.Main:AddButton({
-        Name = "Redeem all code",
+        Title = "Redeem all code",
         Callback = function()
             function RedeemCode(value)
                 game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
