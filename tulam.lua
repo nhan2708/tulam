@@ -2786,7 +2786,7 @@ local listfastattack = {'Slow','Normal','Super'}
 
 --// auto farm chest
 --------------------------
-
+--[[
 local Code = {
     "EXP_5B",
     "CONTROL",
@@ -2820,7 +2820,7 @@ local Code = {
     "Sub2Fer999",
     "Enyu_is_Pro"
    }
-
+]]
       Tabs.Main:AddButton({
         Title = "Auto Redeem All Code",
         Description = "",
@@ -2829,7 +2829,7 @@ local Code = {
         end
     })
 
-    function RedeemCode()
+    function RedeemCode(Code)
 		game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Code)
 	end
 
