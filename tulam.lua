@@ -213,7 +213,7 @@ local LogoHub = Instance.new("ImageLabel")
     LogoHub.BackgroundTransparency = 1.000
     LogoHub.Position = UDim2.new(0, 5, 0, 1)
     LogoHub.Size = UDim2.new(0, 26, 0, 26)
-    LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(12523036534)
+    LogoHub.Image = "rbxassetid://18648609696"..tostring(12523036534)
 
     local ScrollTab = Instance.new("ScrollingFrame")
     ScrollTab.Name = "ScrollTab"
