@@ -2787,7 +2787,7 @@ local listfastattack = {'Slow','Normal','Super'}
 --// auto farm chest
 --------------------------
 
-local x2Code = {
+local Code = {
     "EXP_5B",
     "CONTROL",
     "UPDATE11",
@@ -2822,16 +2822,16 @@ local x2Code = {
    }
 
       Tabs.Main:AddButton({
-        Title = "Redeem all code",
+        Title = "Auto Redeem All Code",
+        Description = "",
         Callback = function()
-            function RedeemCode(value)
-                game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
-            end
-            for i,v in pairs(x2Code) do
-                RedeemCode(v)
-            end
-          end 
+            RedeemCode()
+        end
     })
+
+    function RedeemCode(Code)
+		game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Code)
+	end
 
     Tabs.Main:AddButton({
         Title = "Fps Booster",
