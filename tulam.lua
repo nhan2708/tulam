@@ -1,4 +1,4 @@
---VTN v12
+--VTN v14
 
 local player = game.Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui") -- Get the player's PlayerGui
@@ -2786,17 +2786,52 @@ local listfastattack = {'Slow','Normal','Super'}
 
 --// auto farm chest
 --------------------------
-      Tabs.Main:AddButton({
-        Title = "Auto Redeem All Code",
-        Description = "",
-        Callback = function()
-            RedeemCode()
-        end
-    })
 
-    function RedeemCode(Code)
-		game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Code)
-	end
+local x2Code = {
+    "EXP_5B",
+    "CONTROL",
+    "UPDATE11",
+    "XMASEXP",
+    "1BILLION",
+    "ShutDownFix2",
+    "UPD14",
+    "STRAWHATMAINE",
+    "TantaiGaming",
+    "Colosseum",
+    "Axiore",
+    "Sub2Daigrock",
+    "Sky Island 3",
+    "Sub2OfficialNoobie",
+    "SUB2NOOBMASTER123",
+    "THEGREATACE",
+    "Fountain City",
+    "BIGNEWS",
+    "FUDD10",
+    "SUB2GAMERROBOT_EXP1",
+    "UPD15",
+    "2BILLION",
+    "UPD16",
+    "3BVISITS",
+    "fudd10_v2",
+    "Starcodeheo",
+    "Magicbus",
+    "JCWK",
+    "Bluxxy",
+    "Sub2Fer999",
+    "Enyu_is_Pro"
+   }
+
+      Tabs.Main:AddButton({
+        Name = "Redeem all code",
+        Callback = function()
+            function RedeemCode(value)
+                game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+            end
+            for i,v in pairs(x2Code) do
+                RedeemCode(v)
+            end
+          end 
+    })
 
     Tabs.Main:AddButton({
         Title = "Fps Booster",
@@ -5342,17 +5377,15 @@ end
 local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
     Title = "Select Player",
     Description = "",
-    Options = Playerslist,
-    Callback = function(Value)
-        _G.SelectPly = Value
-    end  
+    Values = Playerslist,
+    Multi = false,
+    Default = 1,
 })
---[[
+
 SelectedPly:SetValue("nil")
 SelectedPly:OnChanged(function(Value)
     _G.SelectPly = Value
 end)
-]]
 
 
 Tabs.Player:AddButton({
@@ -5362,7 +5395,7 @@ Tabs.Player:AddButton({
         NewPlayerList = {}
     for i,v in pairs(game.Players:GetChildren()) do  
         table.insert(Playerslist ,v.Name)
-    end
+        end
     SelectedPly:Refresh(NewPlayerList)
       end
 })
